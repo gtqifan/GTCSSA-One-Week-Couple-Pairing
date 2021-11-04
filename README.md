@@ -1,0 +1,31 @@
+This is the pairing function for GTCSSA one week couple
+
+# 数据库结构
+- 云端数据库 env: owcp-gt
+  - user:
+    - id: 每条记录的id
+    - openid: 微信用户唯一openid
+    - name: 名字
+    - age: 年龄
+    - gender: 性别
+    - major: 专业
+    - grade: 年级
+    - homeTown: 家乡
+    - constallations: 星座
+    - selfIntro: 自我简介
+    - interest: 兴趣爱好（可以选三个）
+    - character: 性格（可以选五个）
+    - expectedAgeLowerBound/UpperBound: TA的年龄最小值/最大值 (inclusive)
+    - expectedHeightLowerBound/UpperBound: TA的身高最小值/最大值 (inclusive)
+    - expectedWeightLowerBound/UpperBound: TA的体重最小值/最大值 (inclusive)
+    - expecedGender: TA的性别
+    - expectedInterest: TA的兴趣爱好
+    - expectedCharacter: TA的性格
+    - match: key: openid, value: match rate
+      - export database json file to /db_manipulation, run db_manipulation/calculate_match_rate.py, import output.json to database
+    - cp: 用户的cp的openid
+    - cp_rate: 用户和cp的匹配度
+    - taskImages: [tasknumber, imageUrl/text, time]
+    - wechatId: 微信号 (加好友用)
+    - avatarUrl: 头像url
+    - image_uploader: 做任务的时候，上传照片的人（1 per cp）
